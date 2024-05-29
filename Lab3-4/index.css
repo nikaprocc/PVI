@@ -1,0 +1,216 @@
+dialog {
+	border: solid 2px;
+	border-radius: 5px;
+	width:60%;
+	align-items: center;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+
+@media(max-width: 800px) {
+	#nav-menu {
+ 		flex-direction: row;
+ 		justify-content: center;
+ 		align-items: center;
+ 	}
+ 	#nav-menu ul{display:flex;
+ 		justify-content: center;
+	align-items: center;
+ 	}}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.bg-header{
+	background-color: #9B9B9B;
+}
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+}
+
+ .nav-item a{
+ 	color: #787878;
+ 	font-size: 120%;
+ }
+
+ .nav-item a:hover{
+	font-weight: bold; 
+	color: #787878;
+}
+
+.nav-menu a:active {
+	font-weight: bold;
+	color: #787878;
+}
+
+.table td{
+	padding:15px;
+}
+
+.icon {
+	border:#5db050 solid 2px;
+}
+
+.button-style{
+	box-sizing: border-box;
+   display: block;
+   background-color: #FFFFFF;
+   border: 1px solid;
+   text-align: center;
+   font-size: 20px;
+   width:1.3em;
+   height:1.3em;
+       line-height: 0;
+
+}
+
+body{
+	overflow-x: hidden;
+}
+
+#addButton{
+	margin-right: 6px;
+}
+
+table{
+	width: 60%;
+
+}
+
+#container {
+	max-width: 1200px;
+	margin: 0 auto;
+	justify-content: space-around;
+}
+
+#nav-menu{
+	display: flex;
+	flex-direction: column;
+}
+
+dialog {
+	border: solid 1px;
+	border-radius: 10px;
+	width:50%;
+	align-items: center;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+dialog hr{
+	 position: absolute;
+    left: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.btn-text{
+	width:auto;
+}
+
+.forms-items,
+        .forms-fields {
+            margin: 10px 10px; /* Додайте вертикальний відступ між кожним елементом */
+        }
+
+.forms-items {
+            width: 10vw; /* Задайте фіксовану ширину для заголовків */
+            font-weight: normal;
+            font-size: 20px;
+}
+
+.forms-fields {
+            width: 20vw;/* Займіть весь вільний простір в рядку */
+            color: #8f8f8f;
+}
+
+.context-menu{
+	border: 1px solid;
+}
+
+#profile-menu button{
+  background: none;
+  border:none;
+  display: block;
+  padding:3px 15px;
+  cursor: pointer;
+}
+.context-menu {
+	display: none;
+	position: absolute;
+	background-color: white;
+	border: solid black 1px;
+	padding: 5px 0;
+	display: none;
+}
+
+#profile-notifcation img{
+  width:30px;
+}
+
+.red-dot{
+	width:6px;
+	height: 6px;
+	background-color: red;
+	border-radius: 50%;
+	visibility: hidden;
+	margin-bottom:8%;
+}
+
+.gg-bell:hover + .red-dot{
+	visibility: visible;
+}
+
+#table-show th, td{
+	text-align: center;
+	align-items: center;
+}
+
+.last-column {
+	display:flex;
+	justify-content: center;
+}
+
+.status-iden{
+	width: 20px;
+	align-self: center;
+	height: 20px;
+	background-color: #5db050;
+	border-radius: 50%;
+	display: inline-block; /* Make it inline-block */
+   vertical-align: middle;
+}
+
+.notif-img{
+	height: 30px;
+	width:auto;
+}
+
+.message {
+  margin-bottom: 3px;
+  margin-right: 10px;
+  position: relative;
+  width: 50px;
+  height: 40px;
+  border-radius: 15px; /* Заокруглені кути */
+  background-color: #bdbbbb;
+}
+
+.triangle {
+  position: absolute;
+  top: 45%;
+  left: -7px; /* Зсув трикутника вліво */
+  transform: translateY(-50%); /* Центруємо трикутник по вертикалі */
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #bdbbbb; /* Колір трикутника */
+}
