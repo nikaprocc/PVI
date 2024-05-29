@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Students</title>
+  <link rel="stylesheet" href="Students.css">
+  <meta charset="UTF-8">
+  <meta name="author" content="Veronika Protsiv">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/css.gg@2.0.0/icons/css/bell.css' id="gg-bell" rel='stylesheet'>
+</head>
+
+<body>
+
+  <div  class="context-menu" id="profile-menu">
+    <button id="profile">Profile</button>
+    <button id="logout">Log Out</button>
+  </div>
+
+    <div class="context-menu" id="profile-notifications">
+
+      <div class="notif1">
+        <div class = "message-icon">
+          <img src="notification.png" alt="icon">
+          <label>Admin</label>
+        </div>
+        <div class="message">
+          <div class="triangle"></div>
+        </div>
+
+      </div>
+        <div class="notif1">
+        <div class = "message-icon">
+          <img src="notification.png" alt="icon">
+          <label>John K.</label>
+        </div>
+        <div class="message">
+          <div class="triangle"></div>
+        </div>
+      </div>
+        <div class="notif1">
+        <div class = "message-icon">
+          <img src="notification.png" alt="icon">
+          <label>Ann S.</label>
+        </div>
+        <div class="message">
+          <div class="triangle"></div>
+        </div>
+      </div>
+
+    </div>
+
+
+  <header>
+    <div class="header-left">
+      <h3 id="site-name">CMS</h3>
+    </div>
+    <div class="header-right">
+    <div id="identification">
+      <i class="gg-bell" id="bell-icon"></i>
+      <div id="red-circle" class="red-circle" style="display: none;"></div>
+    </div>
+
+      <img src="icon.png" alt="icon" div="icon" id="icon-png">
+      <p id="acc_name">James Bond</p>
+    </div>
+  </header>
+
+
+<div class="main-part">
+  <div class="container">
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#">Dashboard</a></li><br>
+      <li><a href="#">Students</a></li><br>
+      <li><a href="#">Tasks</a></li><br>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="table-container">
+    	<p id="title">Students</p>
+
+      <button class = "Butt" id="add-student"> + </button> 
+
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th>Group</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Birthday</th>
+            <th>Status</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>  
+        </tbody>
+
+      </table>
+    </div>
+
+      <div class="nav-buttons">
+      <button class="table-button" id="pages-left">&lt;</button>
+      <button class="table-button pages-num" id="pages-1">1</button>
+      <button class="table-button" id="pages-right">&gt;</button>
+      </div>
+
+  </main>
+
+</div>
+  </div>
+
+<dialog class="dialWind" id="add-dialog">
+  <div id="addSt">
+    <div id="add-title">
+      <p id="title-add-edit">Add student</p>
+      <button class="Butt" id="cancel-button">x</button>
+    </div>
+
+    <div id="add-info">
+        <div id="info-part"> 
+          <p>Group</p> 
+          <p>First name</p>
+          <p>Last name</p>
+          <p>Gender</p>
+          <p>Birthday</p>
+        </div>
+        <div id="input-part">
+          <select id="group-name">
+            <option value="---" selected>Select Group</option>
+            <option value="PZ-21">PZ-21</option>
+            <option value="PZ-22">PZ-22</option>
+            <option value="PZ-23">PZ-23</option>
+            <option value="PZ-24">PZ-24</option>
+            <option value="PZ-25">PZ-25</option>
+            <option value="PZ-26">PZ-26</option>
+            <option value="PZ-27">PZ-27</option>
+          </select>
+
+          <input type="text" name="fst-name" id="fst-name"/>
+          <input type="text" name="snd-name" id="snd-name"/>
+
+          <select id="gender">
+            <option value="---" selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+          <input type="date" id="date"/>
+        </div>
+    </div>
+
+    <div class="dial-end">
+      <button class="smaller-butt" id="create-button">Save</button>
+      <button class="smaller-butt" id="ok-button">Ok</button>
+    </div>
+  </div>  
+
+</dialog>
+
+
+  <dialog class="dialWind" id="delete-warn">
+    <div>
+      <h2 id="stinfo-warning">Warning</h2>
+    <button class="table-button dialog-cancel" id="delete-cancel1">&#215;</button>
+    </div>
+    <hr>
+    <div id="delete-question">
+    <h3 id="question-view"></h3>
+    </div>
+        <hr>
+          <div class="stinfo-end">
+      <button class="table-button" id="delete-cancel2">Cancel</button>
+      <button class="table-button" id="delete-ok">Ok</button>
+  </div>
+
+  </dialog>
+
+
+<script src="students.js"></script>
+</body>
+</html>

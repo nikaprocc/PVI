@@ -1,0 +1,310 @@
+@media(max-width: 500px){
+.container{
+  justify-content: center;
+}
+main {
+  padding: 20px;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+}
+
+@media(min-width: 500px){
+.container{
+  display:flex;
+  justify-content: center;
+}
+main {
+  padding: 20px;
+  width: 75%;
+}
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 20px;
+  background-color: #9B9B9B;
+  color: white;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+#site-name {
+  font-weight: 90;
+  margin-right: 20px;
+}
+
+#icon-png {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #36a85c;
+}
+
+#acc_name {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.gg-bell {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+
+
+/* Navigation styles */
+nav {
+  padding: 1% 0;
+}
+
+.nav-menu li {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
+  /*margin-bottom: 5px;*/
+  margin-top: 25px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-menu li a:hover {
+  /*color: #36a85c;*/
+  font-weight: 650;
+  font-size: 115%;
+}
+
+
+/* Main content styles */
+
+
+.main-part{
+  max-width:1200px;
+  margin: 0 auto;
+}
+.table-container {
+  overflow-x: scroll; 
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  text-align: left;
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
+.Butt{
+  background-color: #ffff;
+  float: right;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#title{
+  font-size: 25px;
+}
+
+#add-dialog{
+  width: 55%;
+}
+#add-title{
+  display: flex;
+  position: relative;
+  border-bottom: 2px solid black;
+}
+
+#cancel-button{
+  margin-left: auto;
+  margin-top:2%;
+}
+
+#add-info {
+  display: grid;
+  grid-template-columns: 45% 50%;
+  border-bottom: 2px solid black;
+}
+
+#info-part, #input-part {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 252px;
+}
+
+#input-part select, #input-part input {
+  margin-bottom: 9%;
+  width: 75%;
+}
+
+#info-part {
+}
+#group-name{
+  margin-top: 5%;
+}
+.dialWind{
+  max-width: 700px;
+  min-width: 300px;
+}
+
+.dial-end{
+  margin-left: auto;
+}
+.smaller-butt{
+  background-color: #ffff;
+  float: right;
+  font-size: 13px;
+  margin-top: 2%;
+  margin-left: 4%;
+}
+
+.centered-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Кнопки навігації*/
+.nav-buttons{
+  margin-top: 5%;
+  display: flex;
+  margin-left: 40%;
+}
+
+#title-add-edit{
+  font-size: 22px;
+  font-weight: 650;
+
+}
+
+#edit-button-id, #del-button-id{
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 6%;
+  margin-right: 6%;
+  align-items: center;
+}
+#pen-id{
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.last-column{
+  display: flex;
+}
+
+/**********************************/
+
+#stinfo-warning {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dialog-cancel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#question-view {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Кнопки */
+#delete-ok , #delete-cancel2 {
+  font-size: 16px;
+  font-weight: 550;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  float:right;
+  margin-left: 10px;
+}
+
+
+
+
+
+.context-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: solid black 1px;
+  padding: 5px 0;
+  display: none;
+}
+#profile-menu button{
+  background: none;
+  border:none;
+  display: block;
+  padding:6px 25px;
+  cursor: pointer;
+}
+.red-circle {
+      width: 8px;
+      height: 8px;
+      background-color: red;
+      border-radius: 50%;
+      position: sticky;
+top: 2.5%; left: 89.5%;
+      margin-bottom: 3%;
+      z-index: 9999;
+    }
+#identification{
+  width: 30px;
+
+}
