@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Students</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Veronika Protsiv">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#007bff"> 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet"
+          href="students.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="students.js"></script>
+
+</head>
+
+<body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered!', registration);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+
+
+  
+    <header class="d-flex flex-wrap justify-content-center pt-1 py-sm-3 mb-4 border-bottom">
+        <button class="btn d-md-none pb-2 border-0" id="toggle" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
+            aria-controls="offcanvasResponsive">
+                <i class="bi bi-list" style="font-size: 24px"></i>
+            </button>
+
+        <form class="offcanvas-md offcanvas-top" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">CMS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+            </div>
+
+        </form>
+
+        <a href="#" class="d-flex align-items-center pb-1 pb-md-0 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <span class="fs-4 ps-md-3">CMS</span>
+        </a>
+
+        <i class="bi bi-bell mt-1 mt-md-0 mx-3 position-relative"  data-bs-toggle="dropdown" id="notifications" style="font-size: 24px">
+            <span id="notif-exist" class="position-absolute translate-middle border-0 rounded-circle"></span>
+            <form class="dropdown-menu p-1 notify-form">
+                <ul class="d-flex flex-column ps-0 mb-0" id="notify-body" type="none">
+                    <li class="single-notif">
+                        <div class="messager">
+                            <i class="bi bi-person-circle" style="font-size: 24px"></i>
+                            <span>Admin</span>
+                        </div>
+                        <span class="notif-message"></span>
+                    </li>
+                    <li class="single-notif">
+                        <div class="messager">
+                            <i class="bi bi-person-circle" style="font-size: 24px"></i>
+                            <span>Teacher</span>
+                        </div>
+                        <span class="notif-message"></span>
+                    </li>
+                    <li class="single-notif">
+                        <div class="messager">
+                            <i class="bi bi-person-circle" style="font-size: 24px"></i>
+                            <span>Dmytro</span>
+                        </div>
+                        <span class="notif-message"></span>
+                    </li>
+                </ul>
+            </form>
+        </i>
+
+        <div class="mt-1 mt-md-0 pe-3 dropdown text-end" id="profile">
+            <a href="#"  class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle no-arrow" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="icon.png" alt="profile-photo" width="32" height="32" class="rounded-circle">
+                <span class="ps-2 ps-md-1"  id="profile-name">James Bond</span>
+            </a>
+
+            <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Log out</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+  <div class="main-part">
+    <div class="container">
+      <nav>
+        <ul class="nav-menu nav">
+          <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+          <li class="nav-item" id="st-link"><a class="nav-link" href="#">Students</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tasks</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <div class="table-container">
+          <p id="title">Students</p>
+
+          <button class="btn btn-primary" id="add-student"> + </button> 
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>Group</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Birthday</th>
+                <th>Status</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+          </table>
+        </div>
+
+        <div class="nav-buttons">
+          <button class="table-button btn btn-primary" id="pages-left">&lt;</button>
+          <button class="table-button pages-num btn btn-primary" id="pages-1">1</button>
+          <button class="table-button btn btn-primary" id="pages-right">&gt;</button>
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+  <dialog class="dialWind" id="add-dialog">
+    <div id="addSt">
+      <div id="add-title">
+        <p id="title-add-edit">Add student</p>
+        <button class="btn btn-primary" id="cancel-button">x</button>
+      </div>
+
+      <div id="add-info">
+        <div id="info-part"> 
+          <p class="info-p">Group</p> 
+          <p class="info-p">First name</p>
+          <p class="info-p">Last name</p>
+          <p class="info-p">Gender</p>
+          <p class="info-p">Birthday</p>
+        </div>
+        
+  <div id="input-part">
+  <div class="error-message" id="group-error"></div>
+  <select id="group-name" class="form-control">
+    <option value="---" selected>Select Group</option>
+    <option value="PZ-21">PZ-21</option>
+    <option value="PZ-22">PZ-22</option>
+    <option value="PZ-23">PZ-23</option>
+    <option value="PZ-24">PZ-24</option>
+    <option value="PZ-25">PZ-25</option>
+    <option value="PZ-26">PZ-26</option>
+    <option value="PZ-27">PZ-27</option>
+  </select>
+
+  <div class="error-message" id="fst-name-error"></div>
+  <input type="text" name="fst-name" id="fst-name" class="form-control"/>
+
+  <div class="error-message" id="snd-name-error"></div>
+  <input type="text" name="snd-name" id="snd-name" class="form-control"/>
+
+  <div class="error-message" id="gender-error"></div>
+  <select id="gender" class="form-control">
+    <option value="---" selected>Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+
+  <div class="error-message" id="date-error"></div>
+  <input type="date" id="date" class="form-control"/>
+  <input type="hidden" id="student-id"> 
+</div>
+
+      </div>
+    </div>
+
+    <div class="dial-end">
+      <button class="smaller-butt btn btn-primary" id="create-button">Save</button>
+      <button class="smaller-butt btn btn-primary" id="ok-button">Ok</button>
+    </div>
+  </dialog>
+
+
+  <dialog class="dialWind" id="delete-warn">
+    <div>
+      <h2 id="stinfo-warning">Warning</h2>
+      <button class="table-button dialog-cancel btn btn-primary" id="delete-cancel1">&#215;</button>
+    </div>
+    <hr>
+    <div id="delete-question">
+      <h3 id="question-view"></h3>
+    </div>
+    <hr>
+    <div class="stinfo-end">
+      <button class="table-button btn btn-primary" id="delete-cancel2">Cancel</button>
+      <button class="table-button btn btn-primary" id="delete-ok">Ok</button>
+    </div>
+  </dialog>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="students.js"></script>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Students</title>
+  <link rel="stylesheet" href="Students.css">
+  <meta charset="UTF-8">
+  <meta name="author" content="Veronika Protsiv">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/css.gg@2.0.0/icons/css/bell.css' id="gg-bell" rel='stylesheet'>
+</head>
+
+<body>
+
+  <div  class="context-menu" id="profile-menu">
+    <button id="profile">Profile</button>
+    <button id="logout">Log Out</button>
+  </div>
+
+    <div class="context-menu" id="profile-notifications">
+
+      <div class="notif1">
+        <div class = "message-icon">
+          <img src="notification.png" alt="icon">
+          <label>Admin</label>
+        </div>
+        <div class="message">
+          <div class="triangle"></div>
+        </div>
+
+      </div>
+        <div class="notif1">
+        <div class = "message-icon">
+          <img src="notification.png" alt="icon">
+          <label>John K.</label>
+        </div>
+        <div class="message">
+          <div class="triangle"></div>
+        </div>
+      </div>
+        <div class="notif1">
+        <div class = "message-icon">
+          <img src="notification.png" alt="icon">
+          <label>Ann S.</label>
+        </div>
+        <div class="message">
+          <div class="triangle"></div>
+        </div>
+      </div>
+
+    </div>
+
+
+  <header>
+    <div class="header-left">
+      <h3 id="site-name">CMS</h3>
+    </div>
+    <div class="header-right">
+    <div id="identification">
+      <i class="gg-bell" id="bell-icon"></i>
+      <div id="red-circle" class="red-circle" style="display: none;"></div>
+    </div>
+
+      <img src="icon.png" alt="icon" div="icon" id="icon-png">
+      <p id="acc_name">James Bond</p>
+    </div>
+  </header>
+
+
+<div class="main-part">
+  <div class="container">
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#">Dashboard</a></li><br>
+      <li><a href="#">Students</a></li><br>
+      <li><a href="#">Tasks</a></li><br>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="table-container">
+      <p id="title">Students</p>
+
+      <button class = "Butt" id="add-student"> + </button> 
+
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th>Group</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Birthday</th>
+            <th>Status</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+      </table>
+    </div>
+
+      <div class="nav-buttons">
+      <button class="table-button" id="pages-left">&lt;</button>
+      <button class="table-button pages-num" id="pages-1">1</button>
+      <button class="table-button" id="pages-right">&gt;</button>
+      </div>
+
+  </main>
+
+</div>
+  </div>
+
+<dialog class="dialWind" id="add-dialog">
+  <div id="addSt">
+    <div id="add-title">
+      <p id="title-add-edit">Add student</p>
+      <button class="Butt" id="cancel-button">x</button>
+    </div>
+
+    <div id="add-info">
+        <div id="info-part"> 
+          <p>Group</p> 
+          <p>First name</p>
+          <p>Last name</p>
+          <p>Gender</p>
+          <p>Birthday</p>
+        </div>
+        <div id="input-part">
+          <select id="group-name">
+            <option value="---" selected>Select Group</option>
+            <option value="PZ-21">PZ-21</option>
+            <option value="PZ-22">PZ-22</option>
+            <option value="PZ-23">PZ-23</option>
+            <option value="PZ-24">PZ-24</option>
+            <option value="PZ-25">PZ-25</option>
+            <option value="PZ-26">PZ-26</option>
+            <option value="PZ-27">PZ-27</option>
+          </select>
+
+          <input type="text" name="fst-name" id="fst-name"/>
+          <input type="text" name="snd-name" id="snd-name"/>
+
+          <select id="gender">
+            <option value="---" selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+          <input type="date" id="date"/>
+          <input type="hidden" id="student-id"> </div>
+        </div>
+    </div>
+
+    <div class="dial-end">
+      <button class="smaller-butt" id="create-button">Save</button>
+      <button class="smaller-butt" id="ok-button">Ok</button>
+    </div>
+  </div>  
+
+</dialog>
+
+
+  <dialog class="dialWind" id="delete-warn">
+    <div>
+      <h2 id="stinfo-warning">Warning</h2>
+    <button class="table-button dialog-cancel" id="delete-cancel1">&#215;</button>
+    </div>
+    <hr>
+    <div id="delete-question">
+    <h3 id="question-view"></h3>
+    </div>
+        <hr>
+          <div class="stinfo-end">
+      <button class="table-button" id="delete-cancel2">Cancel</button>
+      <button class="table-button" id="delete-ok">Ok</button>
+  </div>
+
+  </dialog>
+
+
+<script src="students.js"></script>
+</body>
+</html>-->
