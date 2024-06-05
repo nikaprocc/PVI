@@ -1,0 +1,338 @@
+dialog {
+	border: solid 2px;
+	border-radius: 5px;
+	width:60%;
+	align-items: center;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+
+@media(max-width: 800px) {
+	#nav-menu {
+ 		flex-direction: row;
+ 		justify-content: center;
+ 		align-items: center;
+ 	}
+ 	#nav-menu ul{display:flex;
+ 		justify-content: center;
+	align-items: center;
+ 	}}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.bg-header{
+	background-color: #9B9B9B;
+}
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+}
+
+ .nav-item a{
+ 	color: #4A4A4A;
+ 	font-size: 120%;
+ }
+
+ .nav-item a:hover{
+	font-weight: bold; 
+	color: #4A4A4A;
+}
+
+.nav-menu a:active {
+	font-weight: bold;
+	color: #4A4A4A;
+}
+
+.table td{
+	padding:15px;
+}
+
+.icon {
+	border:#5db050 solid 2px;
+}
+
+.button-style{
+	box-sizing: border-box;
+   display: block;
+   background-color: #FFFFFF;
+   border: 1px solid;
+   text-align: center;
+   font-size: 20px;
+   width:1.3em;
+   height:1.3em;
+       line-height: 0;
+
+}
+
+
+
+#addButton{
+	margin-right: 6px;
+}
+
+table{
+	width: 80%;
+
+}
+
+#container {
+	max-width: 1200px;
+	margin: 0 auto;
+	justify-content: space-around;
+}
+
+#nav-menu{
+	display: flex;
+	flex-direction: column;
+}
+
+dialog {
+	border: solid 2px;
+	border-radius: 5px;
+	width:60%;
+	align-items: center;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+dialog hr{
+	 position: absolute;
+    left: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.btn-text{
+	width:auto;
+}
+
+.forms-items,
+        .forms-fields {
+            margin: 10px 10px; /* Додайте вертикальний відступ між кожним елементом */
+        }
+
+.forms-items {
+            width: 10vw; /* Задайте фіксовану ширину для заголовків */
+            font-weight: normal;
+            font-size: 20px;
+}
+
+.forms-fields {
+            width: 20vw;/* Займіть весь вільний простір в рядку */
+            color: #8f8f8f;
+}
+
+.context-menu{
+	border: 1px solid;
+}
+
+#profile-menu button{
+  background: none;
+  border:none;
+  display: block;
+  padding:3px 15px;
+  cursor: pointer;
+}
+.context-menu {
+	display: none;
+	position: absolute;
+	background-color: white;
+	border: solid black 1px;
+	padding: 5px 0;
+	display: none;
+}
+
+#profile-notifcation img{
+  width:30px;
+}
+
+.red-dot{
+	width:6px;
+	height: 6px;
+	background-color: red;
+	border-radius: 50%;
+	margin-bottom:8%;
+}
+
+
+#table-show th, td{
+	text-align: center;
+	align-items: center;
+}
+
+.last-column {
+	display:flex;
+	justify-content: center;
+}
+
+.status-iden{
+	width: 20px;
+	align-self: center;
+	height: 20px;
+	background-color: #5db050;
+	border-radius: 50%;
+	display: inline-block; /* Make it inline-block */
+   vertical-align: middle;
+}
+
+.notif-img{
+	height: 30px;
+	width:auto;
+}
+
+.message {
+  margin-bottom: 3px;
+  margin-right: 10px;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px; /* Заокруглені кути */
+  background-color: #CCCCCC;
+}
+
+.triangle {
+  position: absolute;
+  top: 45%;
+  left: -7px; /* Зсув трикутника вліво */
+  transform: translateY(-50%); /* Центруємо трикутник по вертикалі */
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #CCCCCC; /* Колір трикутника */
+}
+
+
+.chat-window {
+	border: 1px solid #979797;
+	float: center;
+	padding: 1%;
+	height: 100%;
+}
+
+.chat-image-icon{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin-right: 2%;
+}
+.chat-choice-button{
+	border: 1px solid #CCCCCC;
+	background-color: #CCCCCC;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	float: center;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-bottom: 2%;
+}
+.chatroom-icons{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+.chat-choice-button:hover{
+	border: #AEAED7 1px solid;
+	background-color: #AEAED7;
+}
+
+#account-chat-list{
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+#account-chat-list li button{
+	width: 100%;
+	float: center;
+	align-items: center;
+}
+
+.message-div{
+	display:flex;
+	align-items: top;
+	width: 100%;
+	justify-content: left;
+	margin-bottom: 3%;
+}
+.message-icon{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.message-message{
+	background-color: #CCCCCC;
+	margin-left: 2%;
+	border-radius: 5px;
+	padding: 2%;
+	word-wrap: break-word;
+	width: 50%;
+	height: 100%;
+	max-width: 400px;
+}
+.message-user{
+	background-color: #AEAED7;
+}
+
+.message-context{
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+}
+
+/* CSS classes */
+.message-container1 {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sender-container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sender-image1 {
+    width: 40px;
+    height: 40px;
+}
+
+.sender-name1 {
+    margin: 0;
+    padding: 0;
+}
+
+.message-content1 {
+    position: relative;
+    flex: 1;
+    background-color: #CCCCCC;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    max-width: calc(100% - 60px);
+}
+
+.message-text1 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
